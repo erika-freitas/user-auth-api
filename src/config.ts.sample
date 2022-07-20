@@ -1,0 +1,3 @@
+const connectionString = 'connection string info';
+
+export default connectionString;
