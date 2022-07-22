@@ -28,7 +28,6 @@ Authentication:
 - POST /token
 - POST /token/validate
 <br>
-
 ### Dependencies:
 - PG:
 ```sh
@@ -41,6 +40,10 @@ npm install express
 - Status Codes: 
 ```sh
 npm install http-status-codes
+```
+- JWT:
+```sh
+npm install jsonwebtoken
 ```
 
 ### Special thanks and resources
