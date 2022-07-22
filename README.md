@@ -28,6 +28,7 @@ Authentication:
 - POST /token
 - POST /token/validate
 <br>
+
 ### Dependencies:
 - PG:
 ```sh
