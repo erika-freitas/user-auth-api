@@ -6,11 +6,6 @@ import usersRoute from './routes/users.route';
 
 const app = express();
 
-// Server
-app.listen(3000, () => {
-  console.log('App running on port 3000');
-});
-
 // App config (global middlewares)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -22,3 +17,8 @@ app.use(authorizationRoute);
 
 // Error handler
 app.use(errorHandler)
+
+// Server
+app.listen(3000, () => {
+  console.log('App running on port 3000');
+});
