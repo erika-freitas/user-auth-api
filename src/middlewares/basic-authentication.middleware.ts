@@ -13,7 +13,7 @@ async function basicAuthenticationMiddleware(req: Request, res: Response, next: 
     const [authenticationType, token] = authorizationHeader.split(' ');
 
     if (authenticationType !== 'Basic' || !token) {
-      throw new ForbiddenError('Invalid credential type');
+      throw new ForbiddenError('Invalid authentication type');
     }
 
     const tokenContent = Buffer.from(token, 'base64').toString('utf-8');
