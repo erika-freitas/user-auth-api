@@ -13,8 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use(statusRoute);
-app.use(jwtBearerAuthenticationMiddleware, usersRoute);
 app.use(authorizationRoute);
+app.use(jwtBearerAuthenticationMiddleware);
+app.use(usersRoute);
 
 // Error handler
 app.use(errorHandler)

@@ -18,21 +18,27 @@ async function jwtBearerAuthenticationMiddleware(req: Request, res: Response, ne
       throw new ForbiddenError('Invalid authentication type');
     }
 
-    const tokenPayload = JWT.verify(token, 'my_secret_key');
-
-    if(typeof tokenPayload !== 'object' || !tokenPayload.sub) {
+    try {
+      const tokenPayload = JWT.verify(token, 'my_secret_key');
+  
+      if(typeof tokenPayload !== 'object' || !tokenPayload.sub) {
+        throw new ForbiddenError('Invalid token');
+      }
+      
+      const user = { 
+        uuid: tokenPayload.sub,
+        username: tokenPayload.username
+      }
+      req.user = user;
+      next();
+      
+    } catch (error) {
       throw new ForbiddenError('Invalid token');
     }
-    
-    const user = { 
-      uuid: tokenPayload.sub,
-      username: tokenPayload.username
-    }
-    req.user = user;
-    next();
   } catch (error) {
     next(error);
   }
+
 }
 
 export default jwtBearerAuthenticationMiddleware
