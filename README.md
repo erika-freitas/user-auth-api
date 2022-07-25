@@ -25,11 +25,9 @@ Users:
 
 Authentication:
 
-- POST /token 
-![get a token](https://i.imgur.com/BgOsG62.png)
+- POST /token <br> ![get a token](https://i.imgur.com/BgOsG62.png)
 
-- POST /token/validate
-![validate a token](https://i.imgur.com/ZZwsoPG.png)
+- POST /token/validate <br> ![validate a token](https://i.imgur.com/ZZwsoPG.png)
 
 ### Dependencies:
 - PG:
