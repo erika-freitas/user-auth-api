@@ -25,8 +25,11 @@ Users:
 
 Authentication:
 
-- POST /token
+- POST /token 
+![get a token](https://i.imgur.com/BgOsG62.png)
+
 - POST /token/validate
+![validate a token](https://i.imgur.com/ZZwsoPG.png)
 
 ### Dependencies:
 - PG:
@@ -49,3 +52,9 @@ npm install jsonwebtoken
 ### Special thanks and resources
 - [Renan's original project](https://github.com/RenanJPaula/dio-node-user-authentication-api)
 - [Digital Innovation One](https://www.dio.me)
+- [ElephantSQL](www.elephantsql.com)
+
+### What's next?
+
+- [ ] Add refresh token endpoint (/token/refresh)
+- [ ] Add config library to use environment variables
